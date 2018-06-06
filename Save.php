@@ -5,8 +5,18 @@
  * Date: 04.06.18
  * Time: 15:43
  */
+<<<<<<< HEAD
 class Save
 {
+=======
+
+
+
+
+class Save
+{
+
+>>>>>>> 01aeb8328c9f2a1f967ee4445b6cbee81dde03f2
     private $connection;
 
     public function __construct($conn)
@@ -14,6 +24,11 @@ class Save
         $this->connection = $conn;
     }
 
+<<<<<<< HEAD
+=======
+#$this->query = $db->prepare('INSERT INTO users VALUES(:name, :surname, :pswd, :email) ');
+
+>>>>>>> 01aeb8328c9f2a1f967ee4445b6cbee81dde03f2
     public function saveForm($name, $surname, $pswd, $email)
     {
 
