@@ -7,7 +7,8 @@
  */
 
 require 'AccountValidation.php';
-require 'database.php';
+
+require 'Save.php';
 
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
@@ -53,12 +54,12 @@ function data($data){
 
 <?php if (false === empty($formValues) && true === empty($errorMessages)): ?>
     <?php echo "Welcome " . $formValues['name']. " " . "<br>Your email address is: " . $formValues['email'] . "<br>"; ?><br>
-    <?php $query = $db->prepare('INSERT INTO users VALUES(:name, :surname, :pswd, :email) ');
-    $query->bindValue(':name', $formValues['name'], PDO::PARAM_STR);
-    $query->bindValue(':surname', $formValues['surname'],PDO::PARAM_STR);
-    $query->bindValue(':pswd', $formValues['pswd'],PDO::PARAM_STR);
-    $query->bindValue(':email', $formValues['email'],PDO::PARAM_STR);
-    $query->execute(); ?>
+    <?php
+    require 'Connection.php';
+    $connection = Connetcion::getConn();
+    $save = new Save($connection);
+    $save->saveForm($formValues['name'],$formValues['surname'],$formValues['pswd'],$formValues['email']);
+    ?>
 <?php else: ?>
     <form action="index.php" method="post">
         <table width="550px">
