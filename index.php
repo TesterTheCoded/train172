@@ -41,7 +41,6 @@ function data($data)
     return $data;
 }
 
-
 ?>
 <!DOCTYPE HTML>
 <html>

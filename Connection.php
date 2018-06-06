@@ -13,7 +13,6 @@ class Connetcion
         $password = $config['password'];
 
         try {
-
             self::$db = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $user, $password, [
                 PDO::ATTR_EMULATE_PREPARES => false,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
@@ -21,7 +20,6 @@ class Connetcion
         } catch (PDOException $error) {
             exit("database error");
         }
-
     }
 
     public static function getConn()

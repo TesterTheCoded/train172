@@ -11,18 +11,9 @@ class AccountValidation
     const NAME_PATTERN = "/^[a-zA-Z]*$/";
     const PASSWORD_PATTERN = "/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/";
 
-<<<<<<< HEAD
     protected $errorMessages = array();
     protected $formValues = [];
 
-=======
-
-    protected $errorMessages = array();
-    protected $formValues = [];
-
-
-
->>>>>>> 01aeb8328c9f2a1f967ee4445b6cbee81dde03f2
     public function validateNotEmpty($val, $key)
     {
         if(empty($val)) {
@@ -30,10 +21,6 @@ class AccountValidation
         }
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 01aeb8328c9f2a1f967ee4445b6cbee81dde03f2
     public function validateName($val, $key)
     {
         if (!preg_match_all(self::NAME_PATTERN, $val)) {
@@ -50,13 +37,8 @@ class AccountValidation
 
     public function validateMatchPassword($input, $match, $key)
     {
-<<<<<<< HEAD
         if ($input !== $match) {
             $this->errorMessages[$key] = "password does not mach";
-=======
-            if ($input !== $match) {
-                $this->errorMessages[$key] = "password does not mach";
->>>>>>> 01aeb8328c9f2a1f967ee4445b6cbee81dde03f2
         }
     }
 
