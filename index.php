@@ -5,13 +5,7 @@
  * Date: 28.05.18
  * Time: 11:45
  */
-<<<<<<< HEAD
 require 'AccountValidation.php';
-=======
-
-require 'AccountValidation.php';
-
->>>>>>> 01aeb8328c9f2a1f967ee4445b6cbee81dde03f2
 require 'Save.php';
 
 error_reporting(E_ALL);
@@ -20,10 +14,6 @@ ini_set("display_errors", 1);
 $errorMessages = array();
 $formValues = [];
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 01aeb8328c9f2a1f967ee4445b6cbee81dde03f2
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     //var_dump($_POST);
     //print_r($_POST);
@@ -43,18 +33,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $validate->validateChecked($formValues['accept'], 'accept');
 
     $errorMessages = $validate->getErrorMessages();
-<<<<<<< HEAD
 }
 
 function data($data)
 {
-=======
-
-
-}
-
-function data($data){
->>>>>>> 01aeb8328c9f2a1f967ee4445b6cbee81dde03f2
     $data = trim($data);
     return $data;
 }
