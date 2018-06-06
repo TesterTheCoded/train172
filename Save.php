@@ -5,21 +5,14 @@
  * Date: 04.06.18
  * Time: 15:43
  */
-
-
-
-
 class Save
 {
-
     private $connection;
 
     public function __construct($conn)
     {
         $this->connection = $conn;
     }
-
-#$this->query = $db->prepare('INSERT INTO users VALUES(:name, :surname, :pswd, :email) ');
 
     public function saveForm($name, $surname, $pswd, $email)
     {

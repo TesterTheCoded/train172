@@ -11,11 +11,8 @@ class AccountValidation
     const NAME_PATTERN = "/^[a-zA-Z]*$/";
     const PASSWORD_PATTERN = "/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/";
 
-
     protected $errorMessages = array();
     protected $formValues = [];
-
-
 
     public function validateNotEmpty($val, $key)
     {
@@ -23,7 +20,6 @@ class AccountValidation
             $this->errorMessages[$key] = "enter require data";
         }
     }
-
 
     public function validateName($val, $key)
     {
@@ -41,8 +37,8 @@ class AccountValidation
 
     public function validateMatchPassword($input, $match, $key)
     {
-            if ($input !== $match) {
-                $this->errorMessages[$key] = "password does not mach";
+        if ($input !== $match) {
+            $this->errorMessages[$key] = "password does not mach";
         }
     }
 

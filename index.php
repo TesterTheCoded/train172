@@ -5,9 +5,7 @@
  * Date: 28.05.18
  * Time: 11:45
  */
-
 require 'AccountValidation.php';
-
 require 'Save.php';
 
 error_reporting(E_ALL);
@@ -15,7 +13,6 @@ ini_set("display_errors", 1);
 
 $errorMessages = array();
 $formValues = [];
-
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     //var_dump($_POST);
@@ -36,11 +33,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $validate->validateChecked($formValues['accept'], 'accept');
 
     $errorMessages = $validate->getErrorMessages();
-
-
 }
 
-function data($data){
+function data($data)
+{
     $data = trim($data);
     return $data;
 }

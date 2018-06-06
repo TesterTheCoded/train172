@@ -15,7 +15,7 @@ class Connetcion
         try {
 
             self::$db = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $user, $password, [
-                PDO::ATTR_EMULATE_PREPARES => false, #odzielnie zapytania, odzielnie parametry na serwerze mysql
+                PDO::ATTR_EMULATE_PREPARES => false,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
         } catch (PDOException $error) {
