@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: weronikakrzynowek
- * Date: 04.06.18
- * Time: 10:35
- */
+
 class Connetcion
 {
     private static $db;
