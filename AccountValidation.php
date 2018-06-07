@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: weronikakrzynowek
- * Date: 30.05.18
- * Time: 09:18
- */
 
 class AccountValidation
 {
@@ -16,44 +10,44 @@ class AccountValidation
 
     public function validateNotEmpty($val, $key)
     {
-        if(empty($val)) {
-            $this->errorMessages[$key] = "enter require data";
+        if (empty($val)) {
+            $this->errorMessages[$key] = 'enter require data';
         }
     }
 
     public function validateName($val, $key)
     {
         if (!preg_match_all(self::NAME_PATTERN, $val)) {
-            $this->errorMessages[$key] = 'letters and white space allowed'; #name and surname
+            $this->errorMessages[$key] = 'letters and white space allowed';
         }
     }
 
     public function validPassword($val, $key)
     {
         if (!preg_match_all(self::PASSWORD_PATTERN, $val)) {
-            $this->errorMessages[$key] = "enter correct password";
+            $this->errorMessages[$key] = 'enter correct password';
         }
     }
 
     public function validateMatchPassword($input, $match, $key)
     {
         if ($input !== $match) {
-            $this->errorMessages[$key] = "password does not mach";
+            $this->errorMessages[$key] = 'password does not mach';
         }
     }
 
     public function emailValid($input, $key)
     {
         if (false === filter_var($input, FILTER_VALIDATE_EMAIL)) {
-            $this->errorMessages[$key] = "invalid email format";
+            $this->errorMessages[$key] = 'invalid email format';
         }
     }
 
     public function validateChecked($val, $key)
     {
         if ($val === 0) {
-            $this->errorMessages[$key] = "User agreement must be accepted";
-          }
+            $this->errorMessages[$key] = 'User agreement must be accepted';
+        }
     }
 
     public function getErrorMessages()

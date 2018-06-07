@@ -24,7 +24,7 @@ class Connetcion
 
     public static function getConn()
     {
-        if(self::$db === null) {
+        if (self::$db === null) {
             new self();
             return self::$db;
         }

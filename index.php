@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: weronikakrzynowek
- * Date: 28.05.18
- * Time: 11:45
- */
+
 require 'AccountValidation.php';
 require 'Save.php';
 
