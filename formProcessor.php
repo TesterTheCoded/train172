@@ -36,10 +36,10 @@ function data($data)
     return $data;
 }
 
-if (false === empty($formValues) && true === empty($errorMessages)): ?>
-    <?php echo "Welcome " . $formValues['name']. " " . "<br>Your email address is: " . $formValues['email'] . "<br>"; ?><br>
-    <?php
+if (false === empty($formValues) && true === empty($errorMessages)) {
+    echo "Welcome " . $formValues['name']. " " . "<br>Your email address is: " . $formValues['email'] . "<br>";
     require 'Connection.php';
     $connection = Connetcion::getConn();
     $save = new Save($connection);
     $save->saveForm($formValues['name'],$formValues['surname'],$formValues['pswd'],$formValues['email']);
+}
